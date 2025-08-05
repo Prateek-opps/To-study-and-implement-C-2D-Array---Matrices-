@@ -1,0 +1,65 @@
+EXPERIMENT - 8
+Prateek Sinha
+24070123077
+ENTC A3
+
+#include <iostream>
+using namespace std;
+int main() {
+    int A[3][3], B[3][3], Product[3][3];
+    cout << "Enter number for A:\n";
+    for (int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+            cout<<"A["<<i<<"]["<<j<<"]:";
+            cin>>A[i][j];
+        }
+    }
+    cout<<"\nEnter number for B:\n";
+    for(int i=0 ; i<3; i++) {
+        for(int j=0 ; j<3 ; j++) {
+            cout<<"B["<<i<<"]["<<j<<"]:";
+            cin>>B[i][j];
+        }
+    }
+    for(int i=0 ; i<3 ; i++){
+        for(int j=0 ; j<3 ; j++) {
+            Product[i][j]=A[i][j]*B[i][j];
+        }
+    }
+    cout<<"Product of Matrix A and B:\n";
+    for (int i=0;i<3;i++){
+        for (int j=0 ; j<3 ; j++){
+            cout<<Product[i][j]<<"\t";
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
+/*Output:-
+Enter number for A:
+A[0][0]:1
+A[0][1]:2
+A[0][2]:3
+A[1][0]:4
+A[1][1]:5
+A[1][2]:6
+A[2][0]:7
+A[2][1]:8
+A[2][2]:9
+
+Enter number for B:
+B[0][0]:1
+B[0][1]:2
+B[0][2]:3
+B[1][0]:4
+B[1][1]:5
+B[1][2]:0
+B[2][0]:1
+B[2][1]:2
+B[2][2]:0
+Product of Matrix A and B:
+1	4	9	
+16	25	0	
+7	16	0
+*/
