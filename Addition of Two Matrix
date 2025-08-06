@@ -6,60 +6,78 @@ ENTC A3
 #include <iostream>
 using namespace std;
 int main() {
-    int A[3][3], B[3][3], Sum[3][3];
-    cout << "Enter number for A:\n";
-    for (int i=0; i<3; i++){
-        for (int j=0; j<3; j++){
-            cout<<"A["<<i<<"]["<<j<<"]:";
-            cin>>A[i][j];
+    int r1, c1, r2, c2;
+    cout << "Enter number of rows of 1st matrix: ";
+    cin >> r1;
+    cout << "Enter number of columns of 1st matrix: ";
+    cin >> c1;
+    cout << "Enter number of rows of 2nd matrix: ";
+    cin >> r2;
+    cout << "Enter number of columns of 2nd matrix: ";
+    cin >> c2;
+    int m1[50][50], m2[50][50], result[50][50];
+    if (r1 == r2 && c1 == c2) {
+        cout << "\nEnter elements of First Matrix:\n";
+        for (int i = 0; i < r1; i++) {
+            for (int j = 0; j < c1; j++) {
+                cout << "Element [" << i << "][" << j << "]: ";
+                cin >> m1[i][j];
+            }
         }
-    }
-    cout<<"\nEnter number for B:\n";
-    for(int i=0 ; i<3; i++) {
-        for(int j=0 ; j<3 ; j++) {
-            cout<<"B["<<i<<"]["<<j<<"]:";
-            cin>>B[i][j];
+        cout << "\nEnter elements of Second Matrix:\n";
+        for (int i = 0; i < r2; i++) {
+            for (int j = 0; j < c2; j++) {
+                cout << "Element [" << i << "][" << j << "]: ";
+                cin >> m2[i][j];
+            }
         }
-    }
-    for(int i=0 ; i<3 ; i++){
-        for(int j=0 ; j<3 ; j++) {
-            Sum[i][j]=A[i][j]+B[i][j];
+        for (int i = 0; i < r1; i++) {
+            for (int j = 0; j < c1; j++) {
+                result[i][j] = m1[i][j] + m2[i][j];
+            }
         }
-    }
-    cout<<"Sum of Matrix A and B:\n";
-    for (int i=0;i<3;i++){
-        for (int j=0 ; j<3 ; j++){
-            cout<<Sum[i][j]<<"\t";
+        cout << "\nSum of matrices:\n";
+        for (int i = 0; i < r1; i++) {
+            for (int j = 0; j < c1; j++) {
+                cout << result[i][j] << " ";
+            }
+            cout << endl;
         }
-        cout<<endl;
+    } else {
+        cout << "Not same dimension";
     }
-
     return 0;
 }
 /*Output:-
-Enter number for A:
-A[0][0]:1
-A[0][1]:2
-A[0][2]:3
-A[1][0]:4
-A[1][1]:5
-A[1][2]:6
-A[2][0]:7
-A[2][1]:8
-A[2][2]:9
+Enter number of rows of 1st matrix: 3
+Enter number of columns of 1st matrix: 3
+Enter number of rows of 2nd matrix: 3
+Enter number of columns of 2nd matrix: 3
 
-Enter number for B:
-B[0][0]:9
-B[0][1]:8
-B[0][2]:7
-B[1][0]:6
-B[1][1]:5
-B[1][2]:4
-B[2][0]:3
-B[2][1]:2
-B[2][2]:1
-Sum of Matrix A and B:
-10	10	10	
-10	10	10	
-10	10	10	
+Enter elements of First Matrix:
+Element [0][0]: 1
+Element [0][1]: 2
+Element [0][2]: 3
+Element [1][0]: 4
+Element [1][1]: 5
+Element [1][2]: 6
+Element [2][0]: 7
+Element [2][1]: 8
+Element [2][2]: 9
+
+Enter elements of Second Matrix:
+Element [0][0]: 9
+Element [0][1]: 8
+Element [0][2]: 7
+Element [1][0]: 6
+Element [1][1]: 5
+Element [1][2]: 4
+Element [2][0]: 3
+Element [2][1]: 2
+Element [2][2]: 1
+
+Sum of matrices:
+10 10 10 
+10 10 10 
+10 10 10 	
 */
