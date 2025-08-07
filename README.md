@@ -117,9 +117,3 @@ They cover:
 - **Multiplication** for compatible matrices.
 - **Simple display** for fixed-size input.
 - **Transpose** for matrix transformation.
-
-Mastering these operations builds a strong foundation for more advanced topics like:
-- Determinants
-- Inverse of matrices
-- Eigenvalues and eigenvectors
-- Applications in graphics, machine learning, and scientific computing.
